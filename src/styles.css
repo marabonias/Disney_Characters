@@ -1,0 +1,404 @@
+/* Disney Dashboard Global Styles - Disney Magic Theme */
+
+/* Root variables for colors and spacing - Disney inspired palette */
+:root {
+	/* Disney Primary Colors */
+	--disney-royal-blue: #41acb1;
+	
+	/* Disney Accent Colors */
+	--disney-white: #dedede;
+	--disney-black: #00232d;
+
+	
+	/* Text Colors */
+	--text-primary: #1a1a2e;
+	--text-secondary: #e3e3e3;
+	
+	/* Background Colors */
+	--background: #ffffff;
+	--surface: #f8fafc;
+	--background-magical: linear-gradient(180deg, #00232d 20%, #114d51 60%,  #349297 );
+	
+	/* Border & Shadows */
+	--border-color: #d1d5db;
+	--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+	--shadow-md: 0 4px 8px rgba(59, 158, 255, 0.15);
+	--shadow-lg: 0 8px 16px rgba(59, 158, 255, 0.2);
+}
+
+/* Body with magical gradient background */
+body {
+	background: var(--background-magical) !important;
+	background-attachment: fixed !important;
+	min-height: 100vh;
+}
+/* Main app container */
+.dashboard-container {
+	padding: 24px;
+	background-color: var(--background);
+}
+
+/* Title styling - Disney Magic */
+.dashboard-title {
+	color: var(--disney-royal-blue);
+	margin-bottom: 24px;
+	font-weight: 700;
+	text-shadow: 2px 2px 4px rgba(59, 158, 255, 0.2);
+	letter-spacing: 0.5px;
+}
+
+/* Table container */
+.table-container {
+	max-height: 600px;
+	overflow: auto;
+}
+
+/* Sticky header and column */
+.sticky-header {
+	background-color: var(--background);
+	position: sticky;
+	top: 0;
+	z-index: 3;
+}
+
+.sticky-column-right {
+	position: sticky;
+	right: 0;
+	background-color: var(--background);
+	z-index: 2;
+}
+
+/* Loading and empty states */
+.loading-state,
+.empty-state {
+	text-align: center;
+	padding: 40px;
+	color: var(--text-secondary);
+}
+
+/* Chart container - Magical styling */
+.chart-container {
+	background-color: var(--background);
+	border-radius: 12px;
+	padding: 16px;
+	box-shadow: var(--shadow-md);
+	border: 1px solid rgba(59, 158, 255, 0.2);
+}
+
+/* Character Modal - Responsive styling */
+.character-modal .MuiDialog-paper {
+	max-width: 600px;
+	width: 90%;
+	margin: 24px;
+}
+
+.character-modal-title {
+    color: var(--disney-white);
+    font-weight: 700;
+    background: linear-gradient(90deg, #00232d, #349297);
+}
+
+.character-modal-content {
+	padding: 20px !important;
+    background: var(--disney-white) !important;
+}
+
+.character-modal-body {
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+	flex-wrap: wrap;
+    
+}
+
+.character-modal-image {
+	max-width: 100%;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 10%;
+	border: 2px solid var(--disney-royal-blue);
+	flex-shrink: 0;
+}
+
+.character-modal-info {
+	flex: 1;
+	min-width: 200px;
+}
+
+.character-modal-actions {
+	padding: 16px 20px !important;
+	background: var(--disney-white) !important;
+}
+
+.character-modal-actions .MuiButton-root {
+	color: #349297 !important;
+	font-weight: 300;
+}
+
+.character-modal-actions .MuiButton-root:hover {
+	background-color: rgba(52, 146, 151, 0.1) !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+	.character-modal .MuiDialog-paper {
+		width: 95%;
+		margin: 16px;
+	}
+
+	.character-modal-body {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.character-modal-image {
+		width: 150px;
+		height: 150px;
+		margin: 0 auto;
+	}
+
+	.character-modal-info {
+		width: 100%;
+		text-align: center;
+	}
+
+	.character-modal-title {
+		font-size: 1.25rem;
+		text-align: center;
+	}
+}
+
+/* Form controls - Disney themed */
+.filter-form {
+	padding: 16px;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+	border-radius: 12px;
+	margin-bottom: 16px;
+	box-shadow: var(--shadow-sm);
+	border: 1px solid rgba(59, 158, 255, 0.15);
+	backdrop-filter: blur(10px);
+}
+
+/* Button spacing */
+.export-button-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.dashboard-container {
+		padding: 16px;
+	}
+
+	.dashboard-title {
+		font-size: 1.5rem;
+	}
+}
+
+/* Custom scrollbar for table */
+.table-container::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+	background: var(--surface);
+}
+
+.table-container::-webkit-scrollbar-thumb {
+	background: linear-gradient(135deg, var(--disney-magical-blue), var(--disney-pink));
+	border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(135deg, var(--disney-royal-blue), var(--disney-purple));
+}
+
+.disney-image {
+	width: 220px;
+	
+	object-fit: cover;
+	border-radius: 10%;
+	display: block;
+	margin: 0 auto;
+}
+
+.disney-image:hover {
+	transform: scale(1.05);
+	transition: transform 0.3s ease-in-out;
+}
+
+/* Disney-themed paper/card components */
+.MuiPaper-root {
+	border-radius: 12px !important;
+	box-shadow: var(--shadow-md) !important;
+	border: 1px solid rgba(59, 158, 255, 0.1) !important;
+}
+
+/* Button styling - Disney magic */
+.MuiButton-outlined {
+	border-color: var(--disney-white) !important;
+	color: var(--disney-white) !important;
+    background-color: #00232d37 !important;
+}
+
+.MuiButton-outlined:hover {
+	background-color: #00232d9e !important;
+	border-color: var(--disney-white) !important;
+	box-shadow: var(--shadow-sm) !important;
+}
+
+/* Table row hover - subtle Disney blue */
+.MuiTableRow-root:hover {
+	background-color: rgba(59, 158, 255, 0.05) !important;
+}
+
+/* Switch styling - Disney themed */
+.MuiSwitch-root {
+	color: #59d2d8 !important;
+}
+
+.MuiSwitch-switchBase {
+	color: #dadada !important;
+}
+
+.MuiSwitch-switchBase.Mui-checked {
+	color: #59d2d8 !important;
+}
+
+.MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+	background-color: rgb(210, 226, 226) !important;
+	opacity: 1 !important;
+}
+
+/* Search input styling - Disney themed */
+.search-input {
+	max-width: 300px;
+}
+
+.search-input .MuiOutlinedInput-root {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: #ffffff;
+}
+
+.search-input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+	border-color: #ffffff;
+}
+
+.search-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+	border-color: rgba(255, 255, 255, 0.8);
+}
+
+.search-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+	border-color: var(--disney-royal-blue);
+	border-width: 2px;
+}
+
+.search-input .MuiInputLabel-root {
+	color: #ffffff;
+}
+
+.search-input .MuiInputLabel-root.Mui-focused {
+	color: var(--disney-royal-blue);
+}
+
+.search-input .MuiOutlinedInput-input {
+	color: #ffffff;
+}
+
+/* TextField active/focus styling - Disney themed */
+
+/* Pie Films Chart Container */
+.pie-chart-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+	box-sizing: border-box;
+}
+
+.pie-chart-container .highcharts-container {
+	width: 100% !important;
+	margin: 0 auto;
+}
+
+.pie-chart-container .highcharts-title {
+	text-align: center !important;
+}
+
+.pie-chart-container .highcharts-legend {
+	max-height: 120px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.pie-chart-container .highcharts-legend::-webkit-scrollbar {
+	width: 6px;
+}
+
+.pie-chart-container .highcharts-legend::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 3px;
+}
+
+.pie-chart-container .highcharts-legend::-webkit-scrollbar-thumb {
+	background: #59d2d8;
+	border-radius: 3px;
+}
+
+.pie-chart-container .highcharts-legend::-webkit-scrollbar-thumb:hover {
+	background: #46bdc3;
+}
+
+/* Pie Chart Logo Container */
+.pie-chart-logo-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.pie-chart-logo {
+	max-width: 180px;
+	height: auto;
+}
+
+/* Pie Chart Content Container */
+.pie-chart-content {
+	width: 100%;
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+/* Pie Chart Button Container */
+.pie-chart-button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 16px;
+	width: 100%;
+}
+
+
+
+
+
+
